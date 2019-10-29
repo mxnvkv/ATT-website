@@ -1,0 +1,739 @@
+@import vars
+@import fonts
+@import libs
+@import "../bower_components/owl.carousel/dist/assets/owl.carousel.min"
+// Upload RobotoCondensedRegular
+// Write function, which converts px to em
+// Position relative with top-pannel-content
+
+// Problems
+// #1 Equal height does not apply on ".new-item-text"
+
+// #2 CLearfix - purpose?
+// &::after
+// 	display: block
+// 	content: ''
+// 	clear: both
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'RobotoCondensed', sans-serif
+	overflow-x: hidden
+	color: $text
+
+.text-right
+	text-align: right
+
+.text-left
+	text-align: left
+
+.owl-carousel
+	display: block
+	z-index: auto
+
+
+// Header
+// --------------------------------------------------
+.top-line
+	background-color: $main-color
+	text-align: center
+	border-bottom: lighten($main-color, 6%) 1px solid
+	position: relative
+	z-index: 2
+
+	a
+		color: #fff
+
+	ul, li
+		list-style-type: none
+		padding: 0
+		margin: 0
+
+	.sf-menu
+		margin: 0 auto
+		float: none
+		display: inline-block
+
+		// Delete bottom's margin
+		margin-bottom: -7px
+
+		> li
+			background-color: transparent
+
+			&.active
+				background-color: darken($main-color, 3%)
+
+				> a
+					color: $accent-color
+
+			&:hover
+				background-color: darken($main-color, 3%)
+
+				> a
+					color: $accent-color
+
+			a
+				color: #fff
+				// font-family: 'Roboto', sans-serif
+				font-size: 15px
+				border: none
+				padding: 25px 28px
+
+				.fas
+					font-size: 11px
+					margin-left: 2px
+
+		ul
+			background-color: $main-color
+
+			li
+				background-color: $main-color
+				// border-bottom: darken($main-color, 5%) 1px solid
+
+				a
+					padding: 10px
+					color: #fff
+					text-align: center
+
+				&:hover
+					background-color: darken($main-color, 3%)
+
+					a
+						color: $accent-color
+
+
+// Header > Top panel
+// --------------------------------------------------
+.top-pannel
+	background-color: rgba(lighten($main-color, 2%), .8)
+	color: #fff
+	padding: 50px 0
+	position: relative
+	// Remove next line
+	// background-color: $main-color
+	z-index: 1
+	box-shadow: rgba( 255, 255, 255, .03 ) 0 5px 0 5px
+
+	&-content
+		// ASK ABOUT
+		position: relative
+		z-index: 1
+
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		// background-image: url(../img/bg-top-pannel.jpeg)
+		background-position: center
+		background-repeat: no-repeat
+		background-size: cover
+		z-index: 0
+		opacity: .16
+
+	&-box
+		h4
+			text-transform: uppercase
+			// font-family: 'Roboto'
+			// Doesn't work
+			font-size: 15px
+			margin-top: 0
+			position: relative
+			padding-bottom: 10px
+
+			&::after
+				content: ''
+				height: 1px
+				width: 100%
+				background-color: $accent-color
+				position: absolute
+				left: 0
+				bottom: 0
+				// bottom: -5px
+				// bottom: -10px C
+				opacity: .4
+
+		ul, li
+			padding: 0
+			margin: 0
+			list-style-type: none
+
+		li
+			display: inline-block
+			max-width: 48%
+			opacity: .35
+			font-size: 12px
+			padding: 0 10px 0 30px
+			position: relative
+
+			&:only-child
+				max-width: 100%
+
+			.fas, .far
+				position: absolute
+				font-size: 16px
+				left: 7px
+				top: 2px
+
+.logo
+	position: relative
+	top: 7px
+
+	img
+		max-width: 100%
+		// background-position: bottom
+
+.top-phone
+	font-size: 16px
+	margin-top: -2px
+	// font-family:
+
+	span
+		font-size: 13px
+		// color: lighten($main-color, 20%)
+		opacity: .4
+
+.top-email
+	font-size: 14px
+
+	a
+		color: #fff
+		text-decoration: underline
+
+	span
+		opacity: .4
+
+.top-email,
+.top-phone
+	.fas
+		margin-right: 3px
+
+.button
+	color: #111
+	background-color: $accent-color
+	border-radius: 2px
+	text-transform: uppercase
+	font-weight: bold
+	padding: 10px 35px
+	position: relative
+	transition: background-color .25s ease
+
+	&:hover
+		background-color: lighten($accent-color, 12%)
+
+	&:active
+		background-color: darken($accent-color, 10%)
+
+	&::after
+		position: absolute
+		content: ''
+		background-color: darken($accent-color, 10%)
+		width: 100%
+		bottom: 0
+		height: 3px
+		left: 0
+		border-bottom-right-radius: 2px
+		border-bottom-left-radius: 2px
+
+	&:hover, &:active
+		text-decoration: none
+		color: #222
+
+	&-small
+		font-size: 14px
+		padding: 6px 18px
+
+		&::after
+			height: 2px
+
+.top-button
+	margin-top: 25px
+
+
+// Slider
+// --------------------------------------------------
+
+.slider-wrap
+	.slider-nav-container
+		position: relative
+
+	.slider-nav
+		position: absolute
+		width: 100%
+		z-index: 2
+
+		button
+			color: #fff
+			border: none
+			background-color: transparent
+			font-size: 36px
+			position: absolute
+			top: 193px
+
+			&:last-child
+				right: 0
+
+.slider
+	position: absolute
+	top: 0
+	width: 100%
+	overflow-x: hidden
+
+	&::after
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		content: ''
+		position: absolute
+		z-index: -1
+
+	.owl-nav
+		display: none
+
+	.owl-dots
+		position: absolute
+		bottom: 50px
+		width: 100%
+		text-align: center
+
+		.owl-dot
+			width: 14px
+			height: 14px
+			background-color: darken($main-color, 10%)
+			border-radius: 10em
+			display: inline-block
+			margin: 0 2px
+			cursor: pointer
+			transition: background .25s ease
+
+			&.active
+				background-color: $accent-color
+
+	.slide
+		color: #fff
+		padding-top: 300px
+		padding-bottom: 150px
+		position: relative
+
+		h2
+			font-family: "RobotoCondensedLight", sans-serif
+			font-size: 48px
+			margin-top: 0
+			line-height: 57px
+			text-transform: uppercase
+			margin-bottom: 25px
+			position: relative
+			left: 100px
+			opacity: 0
+			transition: all 1s ease
+
+			&::first-line
+				color: $accent-color
+
+		p
+			font-family: "Roboto", sans-serif
+			// RobotoLight
+			opacity: .75
+			margin-bottom: 40px
+			font-size: 14px
+			position: relative
+			left: 50px
+			opacity: 0
+			transition: all 1.5s ease
+			transition-delay: .15s
+
+		&-bg
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background-size: cover
+			&::before
+				content: ''
+				background-color: $main-color
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				position: absolute
+				opacity: .85
+
+		&-content
+			position: relative
+			z-index: 1
+			padding-top: 80px
+
+.slide-img-wrap
+	img
+		max-width: 100%
+		padding-top: 4px
+		opacity: 0
+		transform: scale(.8)
+		transition: all 1s
+		transition-delay: .25s
+
+.owl-item
+	&.active
+		h2
+			opacity: 1
+			left: 0
+
+		p
+			opacity: 1
+			left: 0
+
+		img
+			opacity: 1
+			transform: scale(1)
+
+
+// Teaser
+// --------------------------------------------------
+
+.break
+	width: 100%
+	height: 557.66px
+	z-index: -10
+
+.sect-teaser
+	background-color: $main-color
+	color: #fff
+	padding: 28px 0 18px
+
+.teaser
+	&-item
+		display: table-row
+
+		> div
+			padding-bottom: 10px
+
+	&-count
+		display: table-cell
+		vertical-align: middle
+
+		&-wrap
+			width: 43px
+			height: 43px
+			position: relative
+
+		.fas::before
+			font-size: 48px
+			color: lighten($main-color, 10%)
+
+		.teaser-number
+			position: absolute
+			top: 12px
+			left: 4px
+			width: 100%
+			text-align: center
+			font-size: 20px
+			color: $accent-color
+
+	&-text
+		display: table-cell
+		line-height: 20px
+		padding-left: 20px
+		opacity: .28
+		padding-top: 5px
+
+
+// Services
+// --------------------------------------------------
+
+.sect-services
+	.col-md-3
+		padding: 0
+
+.service-item
+	border: 5px lighten($main-color, 6%) solid
+	transition: border-color  .5s  ease
+	text-align: center
+	padding-bottom: 35px
+	transition: all .5s ease
+	background-color: #fff
+
+	&:hover
+		border-color: $accent-color
+		transform: scale(1.1)
+		box-shadow: rgba( 0, 0, 0, .35 ) 0 0 32px
+
+		.service-item-image
+			&::before
+				opacity: .7
+
+			.far
+				opacity: .4
+
+		.service-item-stars
+			color: $accent-color
+
+			.fas
+				margin: 0 3px
+
+	h4
+		font-size: 18px
+		text-transform: uppercase
+		margin: 18px 0 5px 0
+
+	&-image
+		min-height: 190px
+		background-size: cover
+		position: relative
+
+		.far
+			font-size: 30px
+			color: #fff
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: -16.875px
+			margin-top: -15px
+			opacity: 0
+			transition: all .5s  ease
+
+		&::before
+			position: absolute
+			content: ''
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			background-color: $main-color
+			opacity: 0
+			transition: all .5s  ease
+
+	&-stars
+		font-size: 11px
+		color: #b4b4b4
+
+		.fas
+			margin-left: 1px
+			transition: all .5s ease
+
+	&-price
+		font-size: 19px
+		margin:
+			top: 5px
+			bottom: 25px
+
+		span
+			font-size: 27px
+
+		.fas
+			color: $accent-color
+			font-size: 18px
+
+.service-item:hover
+    z-index: 2
+    position: sticky
+
+
+// Universal section
+// --------------------------------------------------
+
+.sect-universal
+	background-color: #efefef
+	padding: 60px 0
+	background-size: cover
+	position: relative
+
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		opacity: .85
+
+	h2
+		margin:
+			top: 20px
+			bottom: 45px
+		font-size: 40px
+		line-height: 44px
+
+.sect-news
+	background-image: url(../img/bg-top-pannel.jpeg)
+	color: #fff
+
+	&::before
+		background-color: $main-color
+
+.new-item
+
+	.new-item-text
+		margin-bottom: 30px
+
+	background-color: #efefef
+	padding: 1px 1px 30px 1px
+	color: #111
+	text-align: center
+	margin: 20px 0
+
+	&:hover
+		.new-item-img
+			&::before
+				opacity: .7
+
+			.far
+				opacity: .4
+
+	&-img
+		min-height: 180px
+		background-size: cover
+		display: block
+		position: relative
+
+		.far
+			font-size: 30px
+			color: #fff
+			position: absolute
+			top: 50%
+			left: 50%
+			margin-left: -16.875px
+			margin-top: -15px
+			opacity: 0
+			transition: all .5s  ease
+
+		&::before
+			position: absolute
+			content: ''
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			background-color: $main-color
+			opacity: 0
+			transition: all .5s  ease
+
+	h4
+		margin-top: 15px
+		text-transform: uppercase
+		margin-bottom: 30px
+
+	p
+		margin-bottom: 35px
+		font-size: 14px
+
+	h4, p
+		padding: 0 20px
+
+
+// Goverment section
+// --------------------------------------------------
+
+.link-item
+	display: block
+	padding: 14px
+	border: 4px $accent-color solid
+	background-color: #fff
+	color: #111
+	text-decoration: none
+	margin:
+		bottom: 15px
+		top: 15px
+
+	&::after
+		display: block
+		content: ''
+		clear: both
+
+	&:hover
+		text-decoration: none
+
+		.h4
+			text-decoration: none
+
+	.h4
+		text-transform: uppercase
+		text-decoration: underline
+		line-height: 18px
+		font-size: 15px
+		display: block
+
+	img
+		width: 34px
+		height: auto
+		float: left
+		margin-right: 10px
+		margin-top: 6px
+
+
+// Footer
+// --------------------------------------------------
+
+.main-foot
+	background-color: #0E0B13
+	padding: 70px 0 80px
+	color: #fff
+	// font-size: 14px
+
+	.logo
+		opacity: .4
+
+	.footer-about
+		opacity: .3
+		font-size: 12px
+		margin-top: 50px
+
+	.top-pannel-box
+		margin-bottom: 34px
+
+		li
+			max-width: 100%
+			opacity: .6
+			margin-bottom: 20px
+			font-size: 13px
+			display: block
+			transition: all .5s ease
+
+			&:hover
+				opacity: 1
+
+				.fas
+					opacity: .8
+
+			a
+				color: #fff
+				text-decoration: underline
+				display: block
+
+				&:hover
+					text-decoration: none
+
+				.fas
+					top: 4px
+
+			.fas
+				opacity: .4
+				transition: all .5s ease 
+
+		.footer-menu
+			li
+				margin-bottom: 10px
+
+// Media always at the end
+// --------------------------------------------------
+@import media
