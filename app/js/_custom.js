@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
         itemElement: "slide",
         nav: true,
         navText: ''
+        lazyLoad: true 
     });
 
     $(".next").click(function(){
@@ -26,6 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     $(".service-item h4").equalHeights();
-     
+
 
 });
