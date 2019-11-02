@@ -125,7 +125,12 @@ body
 	background-color: rgba(lighten($main-color, 2%), .8)
 	color: #fff
 	padding: 50px 0
-	position: relative
+
+	// position: relative
+
+	position: absolute
+	width: 100%
+
 	// Remove next line
 	// background-color: $main-color
 	z-index: 1
@@ -287,13 +292,13 @@ body
 			background-color: transparent
 			font-size: 36px
 			position: absolute
-			top: 193px
+			top: 475px
 
 			&:last-child
 				right: 0
 
 .slider
-	position: absolute
+	position: relative
 	top: 0
 	width: 100%
 	overflow-x: hidden
@@ -728,7 +733,7 @@ body
 
 			.fas
 				opacity: .4
-				transition: all .5s ease 
+				transition: all .5s ease
 
 		.footer-menu
 			li
